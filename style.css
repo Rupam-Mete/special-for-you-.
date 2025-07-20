@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom right, #FFD1DC, #FF3366);
+  color: #3D0C02;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: clamp(14px, 2.5vw, 18px);
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+#welcome-screen,
+#letter-screen {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
+  transition: all 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #FF3366;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #FF3366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #ff668a;
+}
+
+#error-msg {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.letter {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: 'Caveat', cursive; /* Soft handwritten look */
+  color: #09448d; /* Warm cherry-brown text */
+  text-align: left;
+  background-color: rgba(248, 248, 251, 0.96);
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(57, 5, 18, 0.2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 380px;
+  margin: 0 auto;
+  max-height: calc(100vh - 200px);
+}
+
+
+audio {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+
+  #welcome-screen,
+  #letter-screen {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    max-width: 100%;
+  }
+
+  input, button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  .letter {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+    max-height: calc(100vh - 150px);
+  }
+
+  h1, p, label {
+    font-size: 1rem;
+  }
+
+  #error-msg {
+    font-size: 0.85rem;
+  }
+}
